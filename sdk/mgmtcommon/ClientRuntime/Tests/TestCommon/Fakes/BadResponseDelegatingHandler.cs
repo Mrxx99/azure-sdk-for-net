@@ -12,9 +12,9 @@ namespace ClientRuntime.Tests.Common.Fakes
     {
         public BadResponseDelegatingHandler()
         {
-            StatusCodeToReturn = HttpStatusCode.InternalServerError;
+            StatusCodeToReturn = HttpStatusCode.InternalServerError;.
             NumberOfTimesToFail = int.MaxValue;
-        }
+        }https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/mgmtcommon/ClientRuntime/Tests/TestCommon/Fakes/BadResponseDelegatingHandler.cs
 
         public int NumberOfTimesFailedSoFar { get; private set; }
 
@@ -31,7 +31,7 @@ namespace ClientRuntime.Tests.Common.Fakes
                 response = new HttpResponseMessage(StatusCodeToReturn);
                 NumberOfTimesFailedSoFar++;
             }
-            return Task.Run(() => response);
+            return Task.FromResult(response);
         }
     }
 }
